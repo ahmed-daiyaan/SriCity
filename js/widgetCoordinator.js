@@ -51,7 +51,11 @@ function humidityGauge(value) {
     strokeColor: "#E0E0E0", // to see which ones work best for you
     generateGradient: true,
     highDpiSupport: true, // High resolution support
-   percentColors : [[0.0, "#667E2C" ], [0.50, "#67B7D1"], [1.0, "#00FFFF"]]
+    percentColors: [
+      [0.0, "#667E2C"],
+      [0.5, "#67B7D1"],
+      [1.0, "#00FFFF"],
+    ],
   };
   var target = document.getElementById("humidity"); // your canvas element
   var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
@@ -61,7 +65,7 @@ function humidityGauge(value) {
   gauge.set(value); // set actual value
 }
 
-function heatIndexGauge(value){
+function heatIndexGauge(value) {
   var opts = {
     angle: 0.13, // The span of the gauge arc
     lineWidth: 0.3, // The line thickness
@@ -69,32 +73,31 @@ function heatIndexGauge(value){
     pointer: {
       length: 0.54, // // Relative to gauge radius
       strokeWidth: 0.055, // The thickness
-      color: '#000000' // Fill color
+      color: "#000000", // Fill color
     },
-    limitMax: false,     // If false, max value increases automatically if value > maxValue
-    limitMin: false,     // If true, the min value of the gauge will be fixed
-    colorStart: '#6F6EA0',   // Colors
-    colorStop: '#C0C0DB',    // just experiment with them
-    strokeColor: '#EEEEEE',  // to see which ones work best for you
+    limitMax: false, // If false, max value increases automatically if value > maxValue
+    limitMin: false, // If true, the min value of the gauge will be fixed
+    colorStart: "#6F6EA0", // Colors
+    colorStop: "#C0C0DB", // just experiment with them
+    strokeColor: "#EEEEEE", // to see which ones work best for you
     generateGradient: true,
-    highDpiSupport: true,     // High resolution support
+    highDpiSupport: true, // High resolution support
     staticZones: [
-      {strokeStyle: "rgb(255,0,0)", min: 0, max: 500, height: 1.4},
-      {strokeStyle: "rgb(200,100,0)", min: 500, max: 1000, height: 1.2},
-      {strokeStyle: "rgb(150,150,0)", min: 1000, max: 1500, height: 1},
-      {strokeStyle: "rgb(100,200,0)", min: 1500, max: 2000, height: 0.8},
-      {strokeStyle: "rgb(0,255,0)", min: 2000, max: 3100, height: 0.6}
+      { strokeStyle: "rgb(255,0,0)", min: 0, max: 500, height: 1.4 },
+      { strokeStyle: "rgb(200,100,0)", min: 500, max: 1000, height: 1.2 },
+      { strokeStyle: "rgb(150,150,0)", min: 1000, max: 1500, height: 1 },
+      { strokeStyle: "rgb(100,200,0)", min: 1500, max: 2000, height: 0.8 },
+      { strokeStyle: "rgb(0,255,0)", min: 2000, max: 3100, height: 0.6 },
     ],
-    
   };
-  var target = document.getElementById('heatIndex'); // your canvas element
+  var target = document.getElementById("heatIndex"); // your canvas element
   var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
   gauge.maxValue = 3000; // set max gauge value
-  gauge.setMinValue(0);  // Prefer setter over gauge.minValue = 0
+  gauge.setMinValue(0); // Prefer setter over gauge.minValue = 0
   gauge.animationSpeed = 32; // set animation speed (32 is default value)
   gauge.set(1250); // set actual value
 }
-function dewpoint(value){
+function dewpoint(value) {
   const labels = ["", "", "", "", "", "", "", "", "", "", "", ""];
   const data = {
     labels: labels,
@@ -107,7 +110,7 @@ function dewpoint(value){
       },
     ],
   };
-  
+
   const config = {
     type: "line",
     data: data,
@@ -115,32 +118,12 @@ function dewpoint(value){
       responsive: true,
     },
   };
-  
+
   var myChart = new Chart(document.getElementById("myChart"), config);
-  
 }
 
-setInterval(function(){
-  if(cs==0){
-    
-  setTimeout(() => {heatIndexGauge(50);   }, 0);
-  }
-  else if(cs==1){
-    
-  setTimeout(() => { humidityGauge(50); }, 3500);
-  }
-  else if(cs==2){
-     
-  setTimeout(() => { thermometer(100,10,true);}, 7000);
-  }
-  else if(cs==3){
-    
-  setTimeout(() => { dewpoint(100);  }, 11500);
-  }
-},100)
 
-// humidityGauge(50)
-// thermometer(100,10,true)
-// setInterval(function(){
-
-// },9000)
+// heatIndexGauge(50);
+// humidityGauge(50);
+// thermometer(100,10,true);
+// dewpoint(100);

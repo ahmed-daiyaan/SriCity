@@ -1,5 +1,6 @@
 
 var cs=0
+var a = 20
 //Plug-in constants
 const MXS_BOTTOM_POS = "bottom",
 	MXS_TOP_POS = "top",
@@ -550,10 +551,28 @@ function chooseTransition(){
 					}
 				}
 				currentImageIndex = nextImageIndex;
-				setTimeout(()=>{
-					//  console.log(currhumidityGauge(50);entImageIndex);
-					cs=currentImageIndex
-				},3500)
+				
+					cs = currentImageIndex;
+					switch (cs) {
+						case 0:
+						  heatIndexGauge(50);
+						  break;
+						case 1:
+						  humidityGauge(50);
+						//   thermometer(100,0,true);
+						  break;
+						case 2:
+						  thermometer(100, 10, true);
+						//   a=a+10
+						  break;
+						case 3:
+						  
+						  dewpoint(100);
+						  break;
+						default:
+						  break;
+					}
+					
 				
 				refresh();
 				
