@@ -1,16 +1,101 @@
-#slideshow {
-    /* margin: 80px auto; */
-    position: relative;
-    width: 100%;
-    height: 100%;
-    /* padding: 10px; */
-    /* box-shadow: 0 0 20px rgba(0, 0, 0, 0.4); */
-  }
+#mySlideshow {
+  width: 100%;
+  height: 100%;
   
-  #slideshow > div {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    right: 10px;
-    bottom: 10px;
-  }
+}
+
+#mySlideshow > div {
+  position: absolute;
+  
+}
+
+#full-header {
+  align-content: center;
+}
+#header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 3vh;
+  position: relative;
+}
+
+
+#title {
+  position: absolute;
+  align-self: center;
+}
+
+
+
+#thermometer {
+  border-radius: 12px;
+  height: 300px;
+  margin-top: 140px;
+  position: relative;
+}
+#thermometer .goal {
+  position: absolute;
+  right: 0;
+  top: 0;
+  visibility: hidden;
+}
+#thermometer .track {
+  background: #e5e5e5 none repeat scroll 0 0;
+  border-radius: 8px;
+  height: 280px;
+  left: 10px;
+  margin: 0 auto;
+  position: relative;
+  top: 10px;
+  width: 30px;
+}
+#thermometer .progress {
+  background: green none repeat scroll 0 0;
+  border-radius: 13px 13px 0 0;
+  bottom: 0;
+  height: 0;
+  left: 5px;
+  margin-bottom: 0 !important;
+  position: absolute;
+  width: 59%;
+  z-index: 100;
+}
+
+#thermometer .amount {
+  border-top: 1px solid #006600;
+  color: black;
+  display: inline-block;
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  padding: 0 55px 0 0;
+}
+#thermometer .progress .amount {
+  border-top: 1px solid #006600;
+  color: #006600;
+  left: 0;
+  padding: 0 0 0 75px;
+  position: absolute;
+  visibility: hidden;
+}
+.bulb {
+  background: #e5e5e5 none repeat scroll 0 0;
+  border-radius: 50%;
+  bottom: -42px;
+  display: block;
+  height: 40px;
+  left: -14px;
+  padding: 10px;
+  position: absolute;
+  width: 43px;
+}
+.inner-bulb {
+  background-color: green;
+  border-radius: 50%;
+  height: 40px;
+  left: 0;
+  position: relative;
+  top: 0;
+  width: 30px;
+}

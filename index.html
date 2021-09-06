@@ -1,28 +1,101 @@
-<html>
-
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/mainStyles.css">
+<!DOCTYPE html>
+<html lang="”en”">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/mainStyles.css" />
     <script src="js/jquery.js"></script>
-    <script src="js/mainFunctions.js"></script>
+    <script
+      src="https://kit.fontawesome.com/13ced3708c.js"
+      crossorigin="anonymous"
+    ></script>
     <script src="js/jquery.vporel.mixSlide.js"></script>
-    <link rel="stylesheet" href="css/mixSlide.css"/>
-</head>
-<body>
+    <script src="js/gauge.js"></script>
+    <script src="js/mainFunctions.js"></script>
+    <script src="js/jquery.thermometer.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-</body>
+    <link rel="stylesheet" href="css/mixSlide.css" />
+  </head>
+  <body>
+    <div id="full-header">
+      <div style="position: absolute; left: 50%; top: 5%">
+        <div style="position: relative; left: -50%">
+          <text style="font-size: 5vh">Current Weather</text>
+        </div>
+      </div>
+      <div id="header">
+        <div class="company-logo">
+          <img src="img/logo.png" alt="Sri City Logo" />
+        </div>
 
-<div id="mySlideshow">
-   <div>
-     <img src="http://farm6.static.flickr.com/5224/5658667829_2bb7d42a9c_m.jpg">
-   </div>
-   <div>
-     <img src="http://farm6.static.flickr.com/5230/5638093881_a791e4f819_m.jpg">
-   </div>
-   <div>
-     Pretty cool eh? This slide is proof the content can be anything.
-   </div>
-</div>
+        <div class="settings-icon">
+          <i class="fas fa-sliders-h"></i>
+        </div>
+      </div>
+    </div>
+    <div id="mySlideshow">
+      <center>
+        <div>
+          <section style="padding: 12vh"></section>
 
+          <canvas style="width: 45%" id="heatIndex" class="gauge-container">
+          </canvas>
+          <section>Humidity : 85%</section>
+        </div>
+        
+        <div>
+          <section style="padding: 12vh"></section>
 
+          <canvas style="width: 45%" id="humidity" class="gauge-container">
+          </canvas>
+          <section>Humidity : 85%</section>
+        </div>
+        <div>
+          <section id="thermo">
+
+          </section>
+          <section id="thermometer">
+            <section class="track">
+              <section class="goal">
+                <section class="amount" id="goalAmount">50</section>
+              </section>
+              <section class="progress">
+                <section
+                  style="display: block"
+                  class="amount"
+                  id="progressAmount"
+                >
+                  
+                </section>
+              </section>
+              <section class="bulb">
+                <section class="inner-bulb"></section>
+              </section>
+            </section>
+          </section>
+          <br />
+          <br />
+          <br />
+          <section>Humidity : 85%</section>
+        </div> 
+       
+        <div
+          class="chart-container"
+          style="position: relative; height: 40vh; width: 40vw"
+        >
+          <section style="padding: 12vh"></section>
+          <canvas id="myChart"></canvas>
+        </div>
+        
+      </center>
+    </div>
+    <script src = "js/widgetCoordinator.js"/>
+    
+    
+
+    </script>
+  </body>
+  
+  <!-- <script type="text/javascript" src="js/gaugeWidget.js"></script> -->
+  <!-- <script type="text/javascript" src="js/chartWidget.js"></script>  -->
 </html>

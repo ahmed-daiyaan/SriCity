@@ -1,4 +1,5 @@
 
+var cs=0
 //Plug-in constants
 const MXS_BOTTOM_POS = "bottom",
 	MXS_TOP_POS = "top",
@@ -89,8 +90,8 @@ function chooseTransition(){
 		let defaults = {
 			fullscreen:false,
 			animation:{
-				speed:1,
-				delay:3
+				speed:0,
+				delay:0
 			},
 			transition : {
 				name : "fade"
@@ -549,17 +550,26 @@ function chooseTransition(){
 					}
 				}
 				currentImageIndex = nextImageIndex;
+				setTimeout(()=>{
+					//  console.log(currhumidityGauge(50);entImageIndex);
+					cs=currentImageIndex
+				},3500)
+				
 				refresh();
+				
 			}
 			function refresh(){
 				$controls.find('.mixSlide-points span').removeClass('active');
 				$container.find('.mixSlide-points span').eq(currentImageIndex).addClass('active');
 				$container.find('.mixSlide-thumbs span').removeClass('active');
 				$container.find('.mixSlide-thumbs span').eq(currentImageIndex).addClass('active');
+				
 			}
 			refresh();
 			function animation(){
 				changeImage(MXS_FORWARD, -1, true);
+				cs=MXS_FORWARD
+				
 			}
 			function launchAnimation(){
 				timer = setInterval(animation, options.animation.delay+options.animation.speed);
