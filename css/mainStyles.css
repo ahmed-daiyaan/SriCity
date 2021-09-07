@@ -5,7 +5,8 @@
 }
 
 #mySlideshow > div {
-  position: absolute;
+  /* position: absolute; */
+  position: fixed;
   
 }
 
@@ -28,11 +29,10 @@
 }
 
 
-
 #thermometer {
   border-radius: 12px;
   height: 300px;
-  margin-top: 140px;
+  /* margin-top: 140px; */
   position: relative;
 }
 #thermometer .goal {
@@ -40,27 +40,30 @@
   right: 0;
   top: 0;
   visibility: hidden;
+  
 }
 #thermometer .track {
-  background: #e5e5e5 none repeat scroll 0 0;
-  border-radius: 8px;
-  height: 280px;
-  left: 10px;
+  background: #c0bebe none repeat scroll 0 0;
+  border-radius: 20px;
+  height: 25vw;
+  left: 1.5vw;
   margin: 0 auto;
   position: relative;
   top: 10px;
-  width: 30px;
+  width: 3vw;
+  
 }
 #thermometer .progress {
-  background: green none repeat scroll 0 0;
+  background: red none repeat scroll 0 0;
   border-radius: 13px 13px 0 0;
   bottom: 0;
   height: 0;
-  left: 5px;
+  left: 8px;
   margin-bottom: 0 !important;
   position: absolute;
   width: 59%;
   z-index: 100;
+  
 }
 
 #thermometer .amount {
@@ -70,6 +73,7 @@
   font-family: Trebuchet MS;
   font-weight: bold;
   padding: 0 55px 0 0;
+  
 }
 #thermometer .progress .amount {
   border-top: 1px solid #006600;
@@ -78,24 +82,28 @@
   padding: 0 0 0 75px;
   position: absolute;
   visibility: hidden;
+  
 }
 .bulb {
-  background: #e5e5e5 none repeat scroll 0 0;
+  background: #c0bebe none repeat scroll 0 0;
   border-radius: 50%;
-  bottom: -42px;
+  bottom: -36px;
   display: block;
   height: 40px;
-  left: -14px;
+  left: -12px;
   padding: 10px;
   position: absolute;
   width: 43px;
+  border-color: #006600;
+  border-width: 25px;
 }
 .inner-bulb {
-  background-color: green;
+  background-color: red;
   border-radius: 50%;
   height: 40px;
-  left: 0;
+  left: 0px;
   position: relative;
   top: 0;
-  width: 30px;
+  width: 40px;
 }
+

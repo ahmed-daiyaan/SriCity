@@ -555,14 +555,15 @@ function chooseTransition(){
 					cs = currentImageIndex;
 					switch (cs) {
 						case 0:
-						  heatIndexGauge(50);
+							thermometer(100, 60, true);
+						  
 						  break;
 						case 1:
 						  humidityGauge(50);
 						//   thermometer(100,0,true);
 						  break;
 						case 2:
-						  thermometer(100, 10, true);
+							heatIndexGauge(50);
 						//   a=a+10
 						  break;
 						case 3:
