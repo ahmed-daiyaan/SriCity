@@ -1,3 +1,42 @@
+// Tick Colors
+const dayTickColor = "#000000";
+const nightTickColor = "#f9ffe3";
+// Background Colors
+const dayBackgroundColor = "linear-gradient(to bottom,  #f18448 0%,#ffd364 100%);"
+const nightBackgroundColor = "linear-gradient(to bottom,  #371a79 0%,#713684 100%)";
+// Text Colors
+const dayTextColor = "#000000";
+const nightTextColor = "#f5f5f5"; 
+// DOM Elements
+const bodyElm = document.getElementById('body');
+const textClass = document.getElementsByClassName('text');
+
+var tickColor;
+
+let today = new Date();
+
+function dayNightMode(currHour = today.getHours()) {
+  
+  if (currHour >= 0 && currHour <= 12) {
+    tickColor = dayTickColor;
+    bodyElm.style.background = dayBackgroundColor;
+    
+    for (i = 0; i < textClass.length; i++) {
+      textClass[i].style.color = dayTextColor;
+    }
+  } else {
+    tickColor = nightTickColor;
+    bodyElm.style.background = nightBackgroundColor;
+    bodyElm.style.backgroundAttachment = "fixed"
+    
+    for (i = 0; i < textClass.length; i++) {
+      textClass[i].style.color = nightTextColor;
+    }
+  }
+}
+
+setInterval(dayNightMode, 5000);
+
 function thermometer(goalAmount, progressAmount, animate) {
   "use strict";
   var $thermo = $("#thermometer"),
@@ -42,7 +81,7 @@ function humidityGauge(value) {
     pointer: {
       length: 0.6, // // Relative to gauge radius
       strokeWidth: 0.035, // The thickness
-      color: "#000000", // Fill color
+      color: tickColor, // Fill color
     },
     limitMax: false, // If false, max value increases automatically if value > maxValue
     limitMin: false, // If true, the min value of the gauge will be fixed
@@ -73,7 +112,7 @@ function heatIndexGauge(value) {
     pointer: {
       length: 0.54, // // Relative to gauge radius
       strokeWidth: 0.055, // The thickness
-      color: "#000000", // Fill color
+      color: tickColor, // Fill color
     },
     limitMax: false, // If false, max value increases automatically if value > maxValue
     limitMin: false, // If true, the min value of the gauge will be fixed

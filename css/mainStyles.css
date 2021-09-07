@@ -1,3 +1,26 @@
+
+:root {
+  /* Background Gradients for both day and night */
+  --day-background-gradient: linear-gradient(to bottom,  #f18448 0%,#ffd364 100%);
+  --night-background-gradient: linear-gradient(to bottom,  #371a79 0%,#713684 100%);
+  
+  /* Text color for both day and night */
+  --day--text-color: #555555;
+  --night-text-color: #f5f5f5;
+
+  /* Ticker color for both day and night */
+  --day-tick-color: #000000;
+  --night-tick-color: #fffaf0;
+}
+
+.text {
+  color: var(--day-text-color);
+}
+
+body {
+  background-attachment: fixed;
+  background: var(--day-background-gradient);
+}
 #mySlideshow {
   width: 100%;
   height: 100%;
