@@ -35,7 +35,7 @@ function dayNightMode(currHour = today.getHours()) {
   }
 }
 
-setInterval(dayNightMode, 5000);
+// setInterval(dayNightMode, 5000);
 
 function thermometer(goalAmount, progressAmount, animate) {
   "use strict";
@@ -79,10 +79,17 @@ function humidityGauge(value) {
     lineWidth: 0.44, // The line thickness
     radiusScale: 1, // Relative radius
     pointer: {
-      length: 0.6, // // Relative to gauge radius
+      length: 0.5, // // Relative to gauge radius
       strokeWidth: 0.035, // The thickness
       color: tickColor, // Fill color
     },
+    staticLabels: {
+      font: "5vh Poppins",  // Specifies font
+      labels: [0, 20, 40, 60, 80, 100],  // Print labels at these values
+      color: tickColor,  // Optional: Label text color
+      fractionDigits: 0  // Optional: Numerical precision. 0=round off.
+    },
+    
     limitMax: false, // If false, max value increases automatically if value > maxValue
     limitMin: false, // If true, the min value of the gauge will be fixed
     colorStart: "#6FADCF", // Colors
@@ -95,6 +102,12 @@ function humidityGauge(value) {
       [0.5, "#67B7D1"],
       [1.0, "#00FFFF"],
     ],
+//     pointer: {
+//   // Extra optional pointer options:
+//   iconPath: 'img/drop.png',  // Icon image source
+//   iconScale: 0.15,    // Size scaling factor
+//   iconAngle: 0.0  // Rotation offset angle, degrees
+// },
   };
   var target = document.getElementById("humidity"); // your canvas element
   var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
@@ -106,11 +119,11 @@ function humidityGauge(value) {
 
 function heatIndexGauge(value) {
   var opts = {
-    angle: 0.13, // The span of the gauge arc
+    angle: 0.15, // The span of the gauge arc
     lineWidth: 0.3, // The line thickness
     radiusScale: 1, // Relative radius
     pointer: {
-      length: 0.54, // // Relative to gauge radius
+      length: 0.5, // // Relative to gauge radius
       strokeWidth: 0.055, // The thickness
       color: tickColor, // Fill color
     },
@@ -122,44 +135,35 @@ function heatIndexGauge(value) {
     generateGradient: true,
     highDpiSupport: true, // High resolution support
     staticZones: [
-      { strokeStyle: "rgb(255,0,0)", min: 0, max: 500, height: 1.4 },
-      { strokeStyle: "rgb(200,100,0)", min: 500, max: 1000, height: 1.2 },
-      { strokeStyle: "rgb(150,150,0)", min: 1000, max: 1500, height: 1 },
-      { strokeStyle: "rgb(100,200,0)", min: 1500, max: 2000, height: 0.8 },
-      { strokeStyle: "rgb(0,255,0)", min: 2000, max: 3100, height: 0.6 },
+      
+      { strokeStyle: "rgb(0,255,0)", min: 0, max: 26, height: 1.4 },
+      { strokeStyle: "rgb(100,200,0)", min: 27, max: 32, height: 1.4 },
+      { strokeStyle: "rgb(150,150,0)", min: 33, max: 39, height: 1.4 },
+      { strokeStyle: "rgb(200,100,0)", min: 40, max: 52, height: 1.4 },
+      { strokeStyle: "rgb(255,0,0)", min: 53, max: 60, height: 1.4 },
     ],
   };
   var target = document.getElementById("heatIndex"); // your canvas element
   var gauge = new Gauge(target).setOptions(opts); // create sexy gauge!
-  gauge.maxValue = 3000; // set max gauge value
+  gauge.maxValue = 60; // set max gauge value
   gauge.setMinValue(0); // Prefer setter over gauge.minValue = 0
   gauge.animationSpeed = 32; // set animation speed (32 is default value)
-  gauge.set(1250); // set actual value
+  gauge.set(value); // set actual value
 }
 function dewpoint(value) {
-  const labels = ["", "", "", "", "", "", "", "", "", "", "", ""];
-  const data = {
-    labels: labels,
-    datasets: [
-      {
-        label: "",
-        backgroundColor: "rgb(255, 99, 132)",
-        borderColor: "rgb(255,255,255)",
-        data: [0, 1, 4, 9, 16, 25, 36, 49, 64, 81, 100, 121],
-        borderWidth:4
-      },
-    ],
-  };
-
-  const config = {
-    type: "line",
-    data: data,
-    options: {
-      responsive: true,
-    },
-  };
-
-  var myChart = new Chart(document.getElementById("myChart"), config);
+  var cnt=document.getElementById("count"); 
+var water=document.getElementById("water");
+var percent=0;
+var interval;
+interval=setInterval(function(){ 
+  percent++; 
+  cnt.innerHTML = percent; 
+  water.style.transform='translate(0'+','+(55-percent)+'%)';
+  if(percent==40){
+    clearInterval(interval);
+  }
+},30);
+ 
 }
 
 

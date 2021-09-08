@@ -559,7 +559,7 @@ function chooseTransition(){
 						  
 						  break;
 						case 1:
-						  humidityGauge(50);
+						  humidityGauge(80);
 						//   thermometer(100,0,true);
 						  break;
 						case 2:
@@ -568,7 +568,7 @@ function chooseTransition(){
 						  break;
 						case 3:
 						  
-						  dewpoint(100);
+						  dewpoint(40);
 						  break;
 						default:
 						  break;
