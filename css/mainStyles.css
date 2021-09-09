@@ -1,9 +1,16 @@
-
 :root {
   /* Background Gradients for both day and night */
-  --day-background-gradient: linear-gradient(to bottom,  #f18448 0%,#ffd364 100%);
-  --night-background-gradient: linear-gradient(to bottom,  #371a79 0%,#713684 100%);
-  
+  --day-background-gradient: linear-gradient(
+    to bottom,
+    #f18448 0%,
+    #ffd364 100%
+  );
+  --night-background-gradient: linear-gradient(
+    to bottom,
+    #371a79 0%,
+    #713684 100%
+  );
+
   /* Text color for both day and night */
   --day--text-color: #555555;
   --night-text-color: #f5f5f5;
@@ -13,8 +20,12 @@
   --night-tick-color: #fffaf0;
 }
 
-.text {
+.title {
   color: var(--day-text-color);
+  font-size: 4vw;
+  padding-top: 1vw;
+  padding-left: 1vw;
+  font-family: Poppins;
 }
 
 body {
@@ -25,13 +36,11 @@ body {
 #mySlideshow {
   width: 100%;
   height: 100%;
-  
 }
 
 #mySlideshow > div {
   /* position: absolute; */
   position: fixed;
-  
 }
 
 /* Header*/
@@ -47,10 +56,7 @@ body {
   position: relative;
 }
 
-
 #title {
   position: absolute;
   align-self: center;
 }
-
-
