@@ -37,6 +37,25 @@ $(function () {
 });
 
 function thermometer(goalAmount, progressAmount, animate) {
+  document.getElementById('thermoAnim').innerHTML = `@keyframes heat 
+  { 
+    from
+    {
+      height: 28px;background-color: rgb(80,10,10);
+        box-shadow:
+        inset 22px 0 0 rgba(5,15,25,.15),
+        inset -6px 0 0 rgba(255,255,255,.1);
+    }
+    to{
+        height: 300px;
+        background-color: rgb(10, 180, 38);
+        box-shadow:
+        inset 22px 0 0 rgba(5,15,25,.15),
+        inset -6px 0 0 rgba(255,255,255,.1),
+        0 0 5px rgb(255,255,255),
+        0 0 20px rgb(255,0,0);
+    }
+}` ;
   "use strict";
   var $thermo = $("#thermometer"),
     $progress = $(".progress", $thermo),

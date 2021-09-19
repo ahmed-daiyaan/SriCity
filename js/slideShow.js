@@ -837,17 +837,15 @@ function chooseTransition() {
         cs = currentImageIndex;
         switch (cs) {
           case 0:
-            thermometer(100, 25, true);
+            thermometer(50, 25, true);
             //TODO:Visualize with respect to average weather conditions annually
             // Color of track changes with calc in temperature. Blue, Red
             break;
           case 1:
-            humidityGauge(100);
-            //   thermometer(100,0,true);
+            humidityGauge(80);
             break;
           case 2:
             heatIndexGauge(50);
-            //   a=a+10
             break;
           case 3:
             dewpoint(40);

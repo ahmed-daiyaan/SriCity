@@ -21,11 +21,16 @@
 }
 
 .title {
+  
   color: var(--day-text-color);
   font-size: 4vw;
   padding-top: 1vw;
-  padding-left: 1vw;
+  /* padding-left: 1vw; */
   font-family: Poppins;
+}
+
+.titlePosition{
+  text-align: center;
 }
 
 body {
@@ -59,4 +64,19 @@ body {
 #title {
   position: absolute;
   align-self: center;
+}
+.column {
+  float: left;
+  width: 50%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.text{
+  font-size: 5vw;
 }
