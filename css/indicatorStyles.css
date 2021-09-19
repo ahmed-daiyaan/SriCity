@@ -82,17 +82,17 @@
   /* Dew Point Indicator */
   .box {
     
-    height: 40vh;
-    width: 40vh;
+    height: 25vw;
+    width: 25vw;
     position: fixed;
     /* position: absolute; */
     /* top: 50%;
     left: 50%; */
     transform: translate(-50%, -50%);
-    rotate: 45deg;
+    /* rotate: 45deg; */
     background: #020438;
-    border-radius: 0 50% 50% 50%;
-    /* border-radius: 100%; */
+    /* border-radius: 0 50% 50% 50%; */
+    border-radius: 100%;
     /* border-radius: 80% 0 55% 50% / 55% 0 80% 50%; */
     overflow: hidden;
   }
@@ -101,9 +101,9 @@
     font-family: 'Poppins';
     font-weight: bold;
     position: absolute;
-    visibility: hidden;
-    left: 0;
-    top: 0;
+    /* visibility: hidden; */
+    left: 11.5vw;
+    top: 13.5vw;
     z-index: 3;
     width: 100%;
     height: 100%;
@@ -112,7 +112,7 @@
     align-items: center;
     justify-content: center;
     color: #fff;
-    font-size: 64px;
+    font-size: 7vw;
   }
   .box .water {
    
@@ -125,7 +125,7 @@
     transform: translate(0, 100%);
     background: #4D6DE3;
     transition: all 0.1s;
-    rotate: -45deg;
+    /* rotate: -45deg; */
   }
   .box .water_wave {
     
@@ -171,12 +171,7 @@
 
 
 
-main{
-    position: relative;
-    perspective: 500px;
-    transform-style: preserve-3d;
-    transition: all 500ms;
-}
+
 main,
 .thermometer-wrapper{
     display: flex;
@@ -186,15 +181,15 @@ main,
 }
 .thermometer-wrapper{
     position: relative;
-    width: 120px;
-    height: 400px;
+    width: 8.78vw;
+    /* height: 29.28vw; */
 }
 .thermometer-base{
     position: relative;
-    top: -38px;
-    width: 70px;
-    height: 300px;
-    border-radius: 70px 70px 0 0;
+    top: -1.78vw;
+    width: 5.124vw;
+    height: 25.96vw;
+    border-radius: 5.12vw 5.12vw 0 0;
     background-color: rgb(200,200,200);
 }
 .thermometer-base::before,
@@ -205,63 +200,66 @@ main,
     display: block;
 }
 .thermometer-base::before{
-    top: 260px;
-    width: 70px;
-    height: 40px;
-    box-shadow: inset 26px 0 0 rgba(5,15,25,.15);
+    top: 15.03vw;
+    width: 5.12vw;
+    height: 9.92vw;
+    box-shadow: inset 26px 0 0 rgba(7, 7, 7, 0.15);
     z-index: 2;
 }
+
+/* Outer Bulb */
 .thermometer-base::after{
-    top: 274px;
+    top: 22vw;
     left: 50%;
-    width: 100px;
-    height: 100px;
-    border-radius: 100px;
-    margin-left: -50px;
+    width: 7.5vw;
+    height: 7.5vw;
+    border-radius: 7.32vw;
+    margin-left: -3.66vw;
 }
 .thermometer-base,
 .thermometer-base::after{
     box-shadow:
-    0 0 0 8px rgb(37, 38, 44),
+    0 0 0 2px rgb(145, 147, 160),
     inset 26px 0 0 rgba(5,15,25,.15),
-    0 18px 0 rgba(0,0,0,.25),
-    0 19px 20px rgba(0,0,0,.25);
+    0 18px 0 rgba(37, 36, 36, 0.25),
+    0 19px 20px rgba(0, 0, 0, 0.25);
 }
 .thermometer-liquid{
     position: absolute;
-    bottom: 70px;
+    bottom: 1.6vw;
     left: 50%;
-    width: 40px;
-    height: 28px;
-    max-height: 300px;
-    border-radius: 40px 40px 0 0;
-    margin-left: -20px;
+    width: 2.92vw;
+    height: 3.04vw;
+    max-height: 24.96vw;
+    border-radius:  2.92vw 2.92vw 0 0;
+    margin-left: -1.46vw;
     background-color: rgb(80,10,10);
-    box-shadow:inset 22px 0 0 rgba(5,15,25,.15),
-    inset -6px 0 0 rgba(255,255,255,.1);
+    box-shadow:inset 22px 0 0 rgba(25, 128, 231, 0.15),
+    inset -6px 0 0 rgba(48, 146, 226, 0.1);
     z-index: 3;
 }
 .thermometer-liquid::before{
     position: inherit;
-    bottom: -40px;
+    bottom: -2.52vw;
     left: 50%;
     content: "";
-    width: 70px;
-    height: 70px;
-    border-radius: 70px;
-    margin-left: -35px;
+    width: 5.124vw;
+    height: 5.124vw;
+    border-radius: 5.124vw;
+    margin-left: -2.56vw;
     background-color: inherit;
     z-index: 3;
     box-shadow:
-    inset 10px 0 0 rgba(5,15,25,.15),
-    inset -8px -4px 0 rgba(255,255,255,.1);
+    inset 10px 0 0 rgba(82, 153, 224, 0.15),
+    inset -8px -4px 0 rgba(68, 166, 196, 0.1);
 }
+/* 
 .thermometer-rule{
     position: absolute;
     bottom: 50%;
     left: 50%;
     width: 44px;
-    height: 275px;
+     height: 975px; 
     transform: translate(-50%,38%);
     display: flex;
     flex-direction: column;
@@ -269,7 +267,7 @@ main,
     align-items: flex-start;
     overflow: hidden;
     z-index: 4;
-}
+} */
 .thermometer-rule-steps{
     width: 55%;
     height: 10px;
@@ -279,46 +277,13 @@ main,
     box-shadow:
     2px 4px 0 rgba(5,15,25,.5),
     inset 2px 0 0 rgba(5,15,25,.15);
+    visibility: hidden;
 }
 .thermometer-rule-steps:first-of-type{
     margin-top: 40px;
 }
-.neon-header{
-    position: relative;
-    margin-top: 0;
-    margin-bottom: .25em;
-    color: white;
-    font-family: 'Baloo Thambi', cursive;
-    font-size: 4em;
-    text-transform: uppercase;
-    /*text-shadow:
-    0 0 4px rgb(255,255,255),
-    0 0 8px rgb(255,0,0),
-    0 0 16px rgb(255,0,0),
-    0 0 24px rgb(255,0,80),
-    0 0 48px rgb(255,0,80);*/
-    transform: translateZ(70px) rotateZ(-3deg);
-}
 
-/*ANIMATIONS*/
-/* @keyframes heat {
-    from{
-        height: 28px;
-        background-color: rgb(80,10,10);
-        box-shadow:
-        inset 22px 0 0 rgba(5,15,25,.15),
-        inset -6px 0 0 rgba(255,255,255,.1);
-    }
-    to{
-        height: 150px;
-        background-color: rgb(10, 180, 38);
-        box-shadow:
-        inset 22px 0 0 rgba(5,15,25,.15),
-        inset -6px 0 0 rgba(255,255,255,.1),
-        0 0 5px rgb(255,255,255),
-        0 0 20px rgb(255,0,0);
-    }
-} */
+
 .anim-heat{
     animation-name: heat;
     animation-duration: 1s;

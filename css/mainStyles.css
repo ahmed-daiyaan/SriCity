@@ -24,11 +24,19 @@
   
   color: var(--day-text-color);
   font-size: 4vw;
-  padding-top: 1vw;
+  padding: 0.5vw;
   /* padding-left: 1vw; */
   font-family: Poppins;
 }
-
+#ticker{
+  position: absolute; bottom:0;
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 4vh;
+    background-color: tic;
+    color: black;
+    left:0
+}
 .titlePosition{
   text-align: center;
 }

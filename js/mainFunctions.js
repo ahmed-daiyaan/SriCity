@@ -2,8 +2,8 @@
 $(function () {
   $("#mySlideshow").mixSlide({
     animation: {
-      speed: 0.5,
-      delay: 3,
+      speed: 1,
+      delay: 10,
     },
     transition: {
       name: "fade",
@@ -37,70 +37,43 @@ $(function () {
 });
 
 function thermometer(goalAmount, progressAmount, animate) {
+  var a  = progressAmount/60*24.96;
+  var color;
+  var inset;
+  if(progressAmount>24.67 && progressAmount<31.89){
+    color = "rgb(10, 180, 38)"
+    inset="#228B22"
+
+    
+  }
+  else if(progressAmount>=31.89){
+    color= "#B7121F"
+    inset="#FF7F7F"
+  }
+  else{
+    color= "#408f90"
+    inset="#ADD8E6"
+  }
   document.getElementById('thermoAnim').innerHTML = `@keyframes heat 
   { 
     from
     {
-      height: 28px;background-color: rgb(80,10,10);
+      height: 2vw;background-color: #408f90;
         box-shadow:
         inset 22px 0 0 rgba(5,15,25,.15),
         inset -6px 0 0 rgba(255,255,255,.1);
     }
     to{
-        height: 300px;
-        background-color: rgb(10, 180, 38);
+        height: `+a+`vw;
+        background-color: `+color+`;
         box-shadow:
         inset 22px 0 0 rgba(5,15,25,.15),
         inset -6px 0 0 rgba(255,255,255,.1),
         0 0 5px rgb(255,255,255),
-        0 0 20px rgb(255,0,0);
+        0 0 20px `+inset+`;
     }
 }` ;
-  "use strict";
-  var $thermo = $("#thermometer"),
-    $progress = $(".progress", $thermo),
-    $goal = $(".goal", $thermo),
-    percentageAmount;
-
-  (goalAmount = goalAmount || parseFloat($goal.text())),
-    (progressAmount = progressAmount || parseFloat($progress.text())),
-    (percentageAmount = Math.min(
-      Math.round((progressAmount / goalAmount) * 1000) / 10,
-      100
-    )); //make sure we have 1 decimal point
-
-  $goal.find(".amount").text();
-  $progress.find(".amount").text();
-
-  $progress.find(".amount").hide();
-  if (animate !== false) {
-    $progress.animate(
-      {
-        height: percentageAmount + "%",
-      },
-      1200,
-      function () {
-        $(this).find(".amount").fadeIn(200);
-      }
-    );
-  } else {
-    $progress.css({
-      height: percentageAmount + "%",
-    });
-    $progress.find(".amount").fadeIn(200);
-  }
-  console.log( document.getElementById("thermometer").style)
-  if(progressAmount>24.6 && progressAmount<31.8){
-
-    document.getElementById("thermometer").style.background="green none repeat scroll 0 0;"
-
-  }
-  else if(progressAmount<=24.6){
-    document.getElementsByClassName("progress")[0].style.background="red none repeat scroll 0 0;"
-  }
-  else if(progressAmount>=24.6){
-    document.getElementsByClassName("progress")[0].style.background="blue none repeat scroll 0 0;"
-  }
+ 
 }
 
 function humidityGauge(value) {
@@ -110,10 +83,16 @@ function humidityGauge(value) {
     radiusScale: 1, // Relative radius
     pointer: {
       length: 0.5, // // Relative to gauge radius
-      strokeWidth: 0.035, // The thickness
+      strokeWidth: 0.055, // The thickness
       color: tickColor, // Fill color
     },
-    
+    // staticLabels: {
+    //   font: "6vh Poppins",  // Specifies font
+    //   labels: [0, 20, 40, 60, 80, 100],  // Print labels at these values
+    //   color: tickColor,  // Optional: Label text color
+    //   fractionDigits: 0  // Optional: Numerical precision. 0=round off.
+    // },
+
     limitMax: false, // If false, max value increases automatically if value > maxValue
     limitMin: false, // If true, the min value of the gauge will be fixed
     colorStart: "#6FADCF", // Colors
@@ -183,7 +162,7 @@ function dewpoint(value) {
     // var sec =today.getSeconds()
     percent++;
     cnt.innerHTML = percent;
-    water.style.transform = "translate(0" + "," + (100 - percent/60*100) + "%)";
+    water.style.transform = "translate(0" + "," + (100 - percent/50*100) + "%)";
     if (percent == value) {
       clearInterval(interval);
     }

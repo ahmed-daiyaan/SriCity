@@ -33,17 +33,19 @@
     <div id="full-header">
       <div>
         <div class="titlePosition">
-          <text class="title text">
+          <text class="text">
+            <section class="title">
             Current Weather
+          </section>
           </text>
         </div>
       </div>
       <div id="header"></div>
     </div>
     <div id="mySlideshow">
-      <div>
-        <main>
-          <section class="thermometer-wrapper">
+      <div >
+        <section style="padding-top: 14.89vw; padding-left:25vw;">
+          <section class="thermometer-wrapper" style="padding-top: 1.5vw;">
               <section class="thermometer-rule">
                   <span class="thermometer-rule-steps"></span>
                   <span class="thermometer-rule-steps"></span>
@@ -56,7 +58,17 @@
               <section class="thermometer-liquid anim-heat"></section>
               <section class="thermometer-base"></section>
           </section>
-      </main>
+        </section>
+        <section
+        class="value"
+        style="font-size: 6vw; font-family: Poppins; font-weight: bold; position: absolute; top: 38%; left: 59%; text-align: center;"
+      >
+        35° C
+        <br>
+        <section class="text">
+        Temperature
+      </section>
+      </section>
       </div>
         <!-- <div>
           <section style="padding-top: 26.5vh"></section>
@@ -92,7 +104,7 @@
         </section>
         </div> -->
         <div>
-          <section style="padding-top: 26.5vh"></section>
+          <section style="padding-top: 14.89vw"></section>
 
           <canvas style="width: 60%" id="humidity" class="gauge-container">
           </canvas>
@@ -108,7 +120,7 @@
           </section>
         </div>
         <div>
-          <section style="padding-top: 26.5vh"></section>
+          <section style="padding-top: 14.89vw"></section>
 
           <canvas style="width: 60%" id="heatIndex" class="gauge-container">
           </canvas>
@@ -124,8 +136,8 @@
         </section>
         </div>
         <div>
-          <section style="padding-top: 26.5vh"></section>
-          <section style="padding-left: 19vw; padding-top: 37vh;">
+          <section style="padding-top: 14.89vw"></section>
+          <section style="padding-left: 29vw; padding-top: 15vw;">
           <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -168,7 +180,7 @@
           <!-- <section style="padding-top: 32vh"></section> -->
           <section
           class="value"
-          style="font-size: 6vw; font-family: Poppins; font-weight: bold; position: absolute; top: 38%; left: 62%; text-align: center;"
+          style="font-size: 6vw; font-family: Poppins; font-weight: bold; position: absolute; top: 38%; left: 63%; text-align: center;"
         >
           20° C
           <br>
@@ -206,15 +218,7 @@
     >
       Powered By Eterna
     </p> -->
-    <marquee direction="left" style="position: absolute; bottom:0;
-    font-family: Poppins;
-    font-weight: bold;
-    font-size: 4vh;
-    background-color: aliceblue;
-    color: black;
-    " 
-    
-    
+    <marquee direction="left" id="ticker"
     >
       Powered By Eterna
       </marquee>
