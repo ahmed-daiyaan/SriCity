@@ -9,13 +9,14 @@
     <link rel="stylesheet" href="css/slideShow.css" />
     <link rel="stylesheet" href="css/indicatorStyles.css" />
   </head>
-  <body style=" background-attachment: fixed;">
+  <body style=" background-attachment: fixed;" id="body">
+    <!-- TODO: Marquee Text, Bottom of Screen  -->
     <div id="full-header">
       <div>
         <div>
-          <text class="title">
-            Current Weather</text
-          >
+          <text class="title text ">
+            Current Weather
+          </text>
         </div>
       </div>
       <div id="header"></div>
@@ -44,7 +45,7 @@
           </section>
           <section style="padding: 4vw"></section>
           <section
-            class="text"
+            class="value"
             style="font-size: 5vw; font-family: Poppins; font-weight: bold"
           >
             35° C
@@ -62,7 +63,7 @@
           <canvas style="width: 55%" id="humidity" class="gauge-container">
           </canvas>
           <section
-            class="text"
+            class="value"
             style="font-size: 5vw; font-family: Poppins; font-weight: bold"
           >
             80%
@@ -80,7 +81,7 @@
           <canvas style="width: 55%" id="heatIndex" class="gauge-container">
           </canvas>
           <section
-            class="text"
+            class="value"
             style="font-size: 5vw; font-family: Poppins; font-weight: bold"
           >
             28° C
@@ -145,14 +146,14 @@
       </center>
     </div>
 
-    <script src="js/widgetCoordinator.js"></script>
     <div
       class="company-logo"
-      style="position: absolute; bottom: 0; padding: 2vh"
+      style="position: absolute; top: 0; right:0; padding: 2vh"
     >
-      <img src="img/logo.png" alt="Sri City Logo" />
+  <!-- TODO: Increase Sri city Size, Crop Integrated Business City -->
+      <img src="img/logo.png" alt="Sri City Logo" height="130"/>
     </div>
-    <p
+    <!-- <p
       class="text"
       style="
         position: absolute;
@@ -164,7 +165,20 @@
       "
     >
       Powered By Eterna
-    </p>
+    </p> -->
+    <marquee direction="left" style="position: absolute; bottom:0;
+    font-family: Poppins;
+    font-weight: bold;
+    font-size: 4vh;
+    background-color: aliceblue;
+    color: black;
+    " 
+    
+    
+    >
+      Powered By Eterna
+      </marquee>
+    <script src="js/widgetCoordinator.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/slideShow.js"></script>
     <script src="js/gauge.min.js"></script>

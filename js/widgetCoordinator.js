@@ -12,6 +12,7 @@ const nightTextColor = "#f5f5f5";
 // DOM Elements
 const bodyElm = document.getElementById("body");
 const textClass = document.getElementsByClassName("text");
+const valueClass = document.getElementsByClassName("value");
 
 var tickColor;
 
@@ -21,7 +22,9 @@ function dayNightMode(
   currHour = today.getUTCHours(),
   currMin = today.getUTCMinutes()
 ) {
-  if (currHour >= 12 && currMin >= 30 && currHour <= 0) {
+  // currHour >= 12 && currMin >= 30 && currHour <= 0
+  if (true) {
+
     tickColor = nightTickColor;
     bodyElm.style.background = nightBackgroundColor;
     bodyElm.style.backgroundAttachment = "fixed";
@@ -29,12 +32,18 @@ function dayNightMode(
     for (i = 0; i < textClass.length; i++) {
       textClass[i].style.color = nightTextColor;
     }
+    for (i = 0; i < valueClass.length; i++) {
+      valueClass[i].style.color = "yellow";
+    }
   } else {
     tickColor = dayTickColor;
     bodyElm.style.background = dayBackgroundColor;
 
     for (i = 0; i < textClass.length; i++) {
       textClass[i].style.color = dayTextColor;
+    }
+    for (i = 0; i < valueClass.length; i++) {
+      valueClass[i].style.color = "blue";
     }
   }
 }

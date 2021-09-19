@@ -70,6 +70,18 @@ function thermometer(goalAmount, progressAmount, animate) {
     });
     $progress.find(".amount").fadeIn(200);
   }
+  console.log( document.getElementById("thermometer").style)
+  if(progressAmount>24.6 && progressAmount<31.8){
+
+    document.getElementById("thermometer").style.background="green none repeat scroll 0 0;"
+
+  }
+  else if(progressAmount<=24.6){
+    document.getElementsByClassName("progress")[0].style.background="red none repeat scroll 0 0;"
+  }
+  else if(progressAmount>=24.6){
+    document.getElementsByClassName("progress")[0].style.background="blue none repeat scroll 0 0;"
+  }
 }
 
 function humidityGauge(value) {
@@ -82,13 +94,7 @@ function humidityGauge(value) {
       strokeWidth: 0.035, // The thickness
       color: tickColor, // Fill color
     },
-    staticLabels: {
-      font: "5vh Poppins", // Specifies font
-      labels: [0, 20, 40, 60, 80, 100], // Print labels at these values
-      color: tickColor, // Optional: Label text color
-      fractionDigits: 0, // Optional: Numerical precision. 0=round off.
-    },
-
+    
     limitMax: false, // If false, max value increases automatically if value > maxValue
     limitMin: false, // If true, the min value of the gauge will be fixed
     colorStart: "#6FADCF", // Colors
@@ -137,7 +143,7 @@ function heatIndexGauge(value) {
       { strokeStyle: "rgb(0,255,0)", min: 0, max: 26, height: 1.4 },
       { strokeStyle: "rgb(100,200,0)", min: 27, max: 32, height: 1.4 },
       { strokeStyle: "rgb(150,150,0)", min: 33, max: 39, height: 1.4 },
-      { strokeStyle: "rgb(200,100,0)", min: 40, max: 52, height: 1.4 },
+      { strokeStyle: "#FFA500", min: 40, max: 52, height: 1.4 },
       { strokeStyle: "rgb(255,0,0)", min: 53, max: 60, height: 1.4 },
     ],
   };
@@ -153,12 +159,14 @@ function dewpoint(value) {
   var water = document.getElementById("water");
   var percent = 0;
   var interval;
+  // let today = new Date();
   interval = setInterval(function () {
+    // var sec =today.getSeconds()
     percent++;
     cnt.innerHTML = percent;
-    water.style.transform = "translate(0" + "," + (55 - percent) + "%)";
-    if (percent == 40) {
+    water.style.transform = "translate(0" + "," + (100 - percent/60*100) + "%)";
+    if (percent == value) {
       clearInterval(interval);
     }
-  }, 30);
+  }, 60);
 }
