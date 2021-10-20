@@ -1,10 +1,15 @@
 
+// document.getElementById("hi").innerHTML = "hello";
+temperature = 0;
+heatIndex = 0;
+humidity = 0;
+dew = 0;
 // Slideslow
 $(function () {
   $("#mySlideshow").mixSlide({
     animation: {
       speed: 1,
-      delay: 10,
+      delay: 3,
     },
     transition: {
       name: "fade",
@@ -122,6 +127,7 @@ function humidityGauge(value) {
 }
 
 function heatIndexGauge(value) {
+  
   var opts = {
     angle: 0.15, // The span of the gauge arc
     lineWidth: 0.3, // The line thickness
@@ -151,6 +157,9 @@ function heatIndexGauge(value) {
   gauge.maxValue = 60; // set max gauge value
   gauge.setMinValue(0); // Prefer setter over gauge.minValue = 0
   gauge.animationSpeed = 32; // set animation speed (32 is default value)
+  if (value > 60) {
+    value=60
+  }
   gauge.set(value); // set actual value
 }
 function dewpoint(value) {

@@ -1,52 +1,57 @@
-const express = require('express');
-const sql = require('mssql');
-const path = require('path');
-const app = express();
-
-const {getHomePage} = require('./routes/index');
 var dbConfig = {
-    server: 'localhost',
-    database: 'TestDB',
-    user: 'SA',
-    password: 'EverymanAKing1.',
-    port: 1433
+  server: 'localhost',
+  database: 'TestDB',
+  user: 'SA',
+  password: 'EverymanAKing1.',
+  port: 1433
 };
+
+const sql = require('mssql');
+const engine = require("consolidate")
+const path = require("path")
+const express = require("express");
+const http = require("http");
+const socketIo = require("socket.io");
+const app = express();
 const port = 5000;
-global.db = sql.connect(dbConfig, function (err) {
-    
-        if (err) console.log(err)
-        
-        // create Request object
-    console.log('Connected to DB')
-        var request = new sql.Request();
-           
-        // query to the database and get the records
-        request.query('select * from Test', function (err, recordset) {
-            
-            if (err) console.log(err)
+app.use(express.static(path.join(__dirname, "public")))
+  .set("views", path.join(__dirname, "views"))
+  .engine("html", engine.mustache)
+  .set("view engine", "html")
+  .get("/", (req, res) => res.render("index.html"))
+const server = http.createServer(app);
+const io = socketIo(server);
+let interval;
+io.on("connection", (socket) => {
+  console.log("New client connected");
+  // getData(socket);
 
-            console.log('fetched results')
-            
-        });
-    });
-
-app.set('port', process.env.port || port); // set express to use this port
-app.set('views', __dirname + '/views'); // set express to look in this folder to render our view
-app.set('view engine', 'ejs'); // configure template engine
-app.use(express.static(path.join(__dirname, 'public'))); // configure express to use public folder
-
-// routes for the app
-
-app.get('/', getHomePage);
-/*
-app.get('/add', addPlayerPage);
-app.get('/edit/:id', editPlayerPage);
-app.get('/delete/:id', deletePlayer);
-app.post('/add', addPlayer);
-app.post('/edit/:id', editPlayer);
-*/
-
-// set the app to listen on the port
-app.listen(port, () => {
-    console.log(`Server running on port: ${port}`);
+  socket.on("disconnect", () => console.log("Client disconnected"));
+  global.db = sql.connect(dbConfig, function (err) {
+    if (err) console.log(err);
+    console.log("Connected to DB");
+    getData(socket);
+  });
+  if (interval) {
+    clearInterval(interval);
+  }
+  interval = setInterval(() => getData(socket), 10000);
 });
+const getData = async (socket) => {
+  try {
+    var request = new sql.Request();
+
+    // query to the database and get the records
+    request.query(
+      "SELECT * FROM Data WHERE SrNo=(SELECT max(SrNo) FROM Data);",
+      function (err, result) {
+        if (err) console.log(err);
+        console.log(result);
+        socket.emit("FromAPI", result["recordset"][0]);
+      }
+    );
+  } catch (error) {
+    console.error(`Error: ${error.code}`);
+  }
+};
+server.listen(port, () => console.log(`Listening on port ${port}`));
