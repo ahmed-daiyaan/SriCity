@@ -232,7 +232,7 @@
     <script>
       async function initSocketIO() {
         const socket = io();
-        socket.on("FromAPI",data=>{
+        socket.on("dataResults",data=>{
         temperature = data["air_temperature"];
         document.getElementById("tempValue").innerHTML=temperature+'° C';
         humidity= data["humidity"];

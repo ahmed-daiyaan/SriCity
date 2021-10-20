@@ -1,5 +1,5 @@
 // Tick Colors
-const dayTickColor = "#000000";
+const dayTickColor = "#03254c";
 const nightTickColor = "#EFFD5F";
 // Background Colors
 const dayBackgroundColor =
@@ -24,7 +24,7 @@ function dayNightMode(
   currMin = today.getUTCMinutes()
 ) {
   // currHour >= 12 && currMin >= 30 && currHour <= 0
-  if (true) {
+  if (currHour >= 12 && currMin >= 30 && currHour <= 0) {
 
     tickColor = nightTickColor;
     bodyElm.style.background = nightBackgroundColor;
@@ -50,7 +50,7 @@ function dayNightMode(
       textClass[i].style.color = dayTextColor;
     }
     for (i = 0; i < valueClass.length; i++) {
-      valueClass[i].style.color = "#03254c";
+      valueClass[i].style.color = dayTickColor;
     }
 
   }

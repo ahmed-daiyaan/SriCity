@@ -47,7 +47,7 @@ const getData = async (socket) => {
       function (err, result) {
         if (err) console.log(err);
         console.log(result);
-        socket.emit("FromAPI", result["recordset"][0]);
+        socket.emit("dataResults", result["recordset"][0]);
       }
     );
   } catch (error) {
