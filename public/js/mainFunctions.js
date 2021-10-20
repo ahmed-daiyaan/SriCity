@@ -1,5 +1,4 @@
 
-// document.getElementById("hi").innerHTML = "hello";
 temperature = 0;
 heatIndex = 0;
 humidity = 0;

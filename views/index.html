@@ -3,23 +3,20 @@
   <head>
     <style id="thermoAnim">
       @keyframes heat {
-    from{
-        height: 28px;
-        background-color: rgb(80,10,10);
-        box-shadow:
-        inset 22px 0 0 rgba(5,15,25,.15),
-        inset -6px 0 0 rgba(255,255,255,.1);
-    }
-    to{
-        height: 150px;
-        background-color: rgb(10, 180, 38);
-        box-shadow:
-        inset 22px 0 0 rgba(5,15,25,.15),
-        inset -6px 0 0 rgba(255,255,255,.1),
-        0 0 5px rgb(255,255,255),
-        0 0 20px rgb(255,0,0);
-    }
-}
+        from {
+          height: 28px;
+          background-color: rgb(80, 10, 10);
+          box-shadow: inset 22px 0 0 rgba(5, 15, 25, 0.15),
+            inset -6px 0 0 rgba(255, 255, 255, 0.1);
+        }
+        to {
+          height: 150px;
+          background-color: rgb(10, 180, 38);
+          box-shadow: inset 22px 0 0 rgba(5, 15, 25, 0.15),
+            inset -6px 0 0 rgba(255, 255, 255, 0.1), 0 0 5px rgb(255, 255, 255),
+            0 0 20px rgb(255, 0, 0);
+        }
+      }
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="css/mainStyles.css" />
@@ -28,117 +25,100 @@
     </style>
     <link rel="stylesheet" href="/css/slideShow.css" />
     <link rel="stylesheet" href="/css/indicatorStyles.css" />
-    
   </head>
-  <body style=" background-attachment: fixed;" id="body">
+  <body style="background-attachment: fixed" id="body">
     <div id="full-header">
       <div>
         <div class="titlePosition">
           <text class="text">
-            <section class="title">
-            Current Weather
-          </section>
+            <section class="title">Current Weather</section>
           </text>
         </div>
       </div>
       <div id="header"></div>
     </div>
     <div id="mySlideshow">
-      <div >
-        <section style="padding-top: 14.89vw; padding-left:25vw;">
-          <section class="thermometer-wrapper" style="padding-top: 1.5vw;">
-              <section class="thermometer-rule">
-                  <span class="thermometer-rule-steps"></span>
-                  <span class="thermometer-rule-steps"></span>
-                  <span class="thermometer-rule-steps"></span>
-                  <span class="thermometer-rule-steps"></span>
-                  <span class="thermometer-rule-steps"></span>
-                  <span class="thermometer-rule-steps"></span>
-                  <span class="thermometer-rule-steps"></span>
-              </section>
-              <section class="thermometer-liquid anim-heat"></section>
-              <section class="thermometer-base"></section>
-          </section>
-        </section>
-        <section 
-        class="value"
-        style="font-size: 6vw; font-family: Poppins; font-weight: bold; position: absolute; top: 38%; left: 58%; text-align: center;"
-      >
-        <section id="tempValue"> 35° C </section>
-        
-        <section class="text">
-        Temperature
-      </section>
-      </section>
-      </div>
-        <!-- <div>
-          <section style="padding-top: 26.5vh"></section>
-          <section id="thermometerPosition" style="padding-left: 26vw;">
-          <section id="thermometer">
-            <section class="track">
-              <section class="goal">
-                <section class="amount" id="goalAmount">50</section>
-              </section>
-              <section class="progress">
-                <section
-                  style="display: block"
-                  class="amount"
-                  id="progressAmount"
-                ></section>
-              </section>
-              <section class="bulb">
-                <section class="inner-bulb"></section>
-              </section>
+      <div>
+        <section style="padding-top: 14.89vw; padding-left: 25vw">
+          <section class="thermometer-wrapper" style="padding-top: 1.5vw">
+            <section class="thermometer-rule">
+              <span class="thermometer-rule-steps"></span>
+              <span class="thermometer-rule-steps"></span>
+              <span class="thermometer-rule-steps"></span>
+              <span class="thermometer-rule-steps"></span>
+              <span class="thermometer-rule-steps"></span>
+              <span class="thermometer-rule-steps"></span>
+              <span class="thermometer-rule-steps"></span>
             </section>
+            <section class="thermometer-liquid anim-heat"></section>
+            <section class="thermometer-base"></section>
           </section>
         </section>
-         
-          <section
+        <section
           class="value"
-          style="font-size: 6vw; font-family: Poppins; font-weight: bold; position: absolute; top: 38%; left: 60%; text-align: center;"
+          style="
+            font-size: 6vw;
+            font-family: Poppins;
+            font-weight: bold;
+            position: absolute;
+            top: 38%;
+            left: 58%;
+            text-align: center;
+          "
         >
-          35° C
-          <br>
-          <section class="text">
-          Temperature
-        </section>
-        </section>
-        </div> -->
-        <div>
-          <section style="padding-top: 14.89vw"></section>
+          <section id="tempValue">35° C</section>
 
-          <canvas style="width: 60%" id="humidity" class="gauge-container">
-          </canvas>
-          <section
-            class="value"
-            style="font-size: 6vw; font-family: Poppins; font-weight: bold; position: absolute; top: 38%; left: 62%; text-align: center;"
-          >
-            <section id="humidityValue">80%</section>
-            
-            <section class="text">
-            Humidity
-          </section>
-          </section>
-        </div>
-        <div>
-          <section style="padding-top: 14.89vw"></section>
+          <section class="text">Temperature</section>
+        </section>
+      </div>
 
-          <canvas style="width: 60%" id="heatIndex" class="gauge-container">
-          </canvas>
-          <section
+      <div>
+        <section style="padding-top: 14.89vw"></section>
+
+        <canvas style="width: 60%" id="humidity" class="gauge-container">
+        </canvas>
+        <section
           class="value"
-          style="font-size: 6vw; font-family: Poppins; font-weight: bold; position: absolute; top: 38%; left: 62%; text-align: center;"
+          style="
+            font-size: 6vw;
+            font-family: Poppins;
+            font-weight: bold;
+            position: absolute;
+            top: 38%;
+            left: 62%;
+            text-align: center;
+          "
+        >
+          <section id="humidityValue">80%</section>
+
+          <section class="text">Humidity</section>
+        </section>
+      </div>
+      <div>
+        <section style="padding-top: 14.89vw"></section>
+
+        <canvas style="width: 60%" id="heatIndex" class="gauge-container">
+        </canvas>
+        <section
+          class="value"
+          style="
+            font-size: 6vw;
+            font-family: Poppins;
+            font-weight: bold;
+            position: absolute;
+            top: 38%;
+            left: 62%;
+            text-align: center;
+          "
         >
           <section id="heatIndexValue">30° C</section>
-          
-          <section class="text">
-          Heat Index
+
+          <section class="text">Heat Index</section>
         </section>
-        </section>
-        </div>
-        <div>
-          <section style="padding-top: 14.89vw"></section>
-          <section style="padding-left: 29vw; padding-top: 15vw;">
+      </div>
+      <div>
+        <section style="padding-top: 14.89vw"></section>
+        <section style="padding-left: 29vw; padding-top: 15vw">
           <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -177,34 +157,33 @@
               </svg>
             </section>
           </section>
-          </section>
-          <!-- <section style="padding-top: 32vh"></section> -->
-          <section
+        </section>
+        <!-- <section style="padding-top: 32vh"></section> -->
+        <section
           class="value"
-          style="font-size: 6vw; font-family: Poppins; font-weight: bold; position: absolute; top: 38%; left: 63%; text-align: center;"
+          style="
+            font-size: 6vw;
+            font-family: Poppins;
+            font-weight: bold;
+            position: absolute;
+            top: 38%;
+            left: 63%;
+            text-align: center;
+          "
         >
           <section id="dewValue">20° C</section>
-          
-          <section class="text">
-          Dew Point
-        </section>
-        </section>
-          <!-- <section
-            class="text"
-            style="font-size: 5vw; font-family: Poppins; font-weight: bold;position: absolute; top:47.5%; left: 64%;"
-          >
-            Dew Point
-          </section> -->
-        </div>
 
+          <section class="text">Dew Point</section>
+        </section>
+      </div>
     </div>
 
     <!-- <div
       class="company-logo"
       style="position: absolute; top: 0; right:0; padding: 2vh"
     > -->
-  <!-- TODO: Increase Sri city Size, Crop Integrated Business City -->
-      <!-- <img src="img/logo.png" alt="Sri City Logo" height="130"/>
+    <!-- TODO: Increase Sri city Size, Crop Integrated Business City -->
+    <!-- <img src="img/logo.png" alt="Sri City Logo" height="130"/>
     </div> -->
     <!-- <p
       class="text"
@@ -219,36 +198,13 @@
     >
       Powered By Eterna
     </p> -->
-    <marquee direction="left" id="ticker"
-    >
-      Powered By Eterna
-      </marquee>
+    <marquee direction="left" id="ticker"> Powered By Eterna </marquee>
     <script src="/js/widgetCoordinator.js"></script>
     <script src="/js/jquery.min.js"></script>
     <script src="/js/slideShow.js"></script>
     <script src="/js/gauge.min.js"></script>
     <script src="/js/mainFunctions.js"></script>
     <script src="/js/socket.io.js"></script>
-    <script>
-      async function initSocketIO() {
-        const socket = io();
-        socket.on("dataResults",data=>{
-        temperature = data["air_temperature"];
-        document.getElementById("tempValue").innerHTML=temperature+'° C';
-        humidity= data["humidity"];
-        document.getElementById("humidityValue").innerHTML=humidity+'%';
-        dew=Math.round(243.04*(Math.log(humidity/100)+((17.625*temperature)/(243.04+temperature)))/(17.625-Math.log(humidity/100)-((17.625*temperature)/(243.04+temperature))))
-        document.getElementById("dewValue").innerHTML=dew+'° C';
-        temp= (temperature*9/5) +32;
-        hum=humidity;
-        heatIndex = Math.round(((-42.379 + 2.04901523*temp + 10.14333127*hum - .22475541*temp*hum - .00683783*temp*temp - .05481717*hum*hum + .00122874*temp*temp*hum + .00085282*temp*hum*hum - .00000199*temp*temp*hum*hum) - 32)/1.8);
-        
-        document.getElementById("heatIndexValue").innerHTML=heatIndex+'° C';
-        });
-       
-      }
-      initSocketIO();
-      
-    </script>
+    <script src="/js/sockets.js"></script>
   </body>
 </html>
