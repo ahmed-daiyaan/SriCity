@@ -24,22 +24,7 @@ function dayNightMode(
   currMin = today.getUTCMinutes()
 ) {
   // currHour >= 12 && currMin >= 30 && currHour <= 0
-  if (currHour >= 12 && currMin >= 30 && currHour <= 0) {
-
-    tickColor = nightTickColor;
-    bodyElm.style.background = nightBackgroundColor;
-    bodyElm.style.backgroundAttachment = "fixed";
-    ticker.style.background =  nightTextColor;
-    ticker.style.color = dayTextColor;
-
-    for (i = 0; i < textClass.length; i++) {
-      textClass[i].style.color = nightTextColor;
-    }
-    for (i = 0; i < valueClass.length; i++) {
-      valueClass[i].style.color = "yellow";
-    }
-
-  } else {
+  if (currHour >= 1 && currHour <= 13) {
     tickColor = dayTickColor;
     bodyElm.style.background = dayBackgroundColor;
     ticker.style.background =  dayTextColor;
@@ -52,6 +37,22 @@ function dayNightMode(
     for (i = 0; i < valueClass.length; i++) {
       valueClass[i].style.color = dayTickColor;
     }
+    
+
+  } else {
+    tickColor = nightTickColor;
+    bodyElm.style.background = nightBackgroundColor;
+    bodyElm.style.backgroundAttachment = "fixed";
+    ticker.style.background =  nightTextColor;
+    ticker.style.color = dayTextColor;
+
+    for (i = 0; i < textClass.length; i++) {
+      textClass[i].style.color = nightTextColor;
+    }
+    for (i = 0; i < valueClass.length; i++) {
+      valueClass[i].style.color = "yellow";
+    }
+    
 
   }
 }
