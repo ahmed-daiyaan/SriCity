@@ -23,6 +23,7 @@ function dayNightMode(
   currHour = today.getUTCHours(),
   currMin = today.getUTCMinutes()
 ) {
+  
   // currHour >= 12 && currMin >= 30 && currHour <= 0
   if (currHour >= 1 && currHour <= 13) {
     tickColor = dayTickColor;
@@ -37,6 +38,8 @@ function dayNightMode(
     for (i = 0; i < valueClass.length; i++) {
       valueClass[i].style.color = dayTickColor;
     }
+
+    document.getElementById("logo").src = "/img/logo_day.png"
     
 
   } else {
@@ -52,7 +55,7 @@ function dayNightMode(
     for (i = 0; i < valueClass.length; i++) {
       valueClass[i].style.color = "yellow";
     }
-    
+    document.getElementById("logo").src = "/img/logo_night.png"
 
   }
 }

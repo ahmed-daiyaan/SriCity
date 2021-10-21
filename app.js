@@ -1,9 +1,12 @@
 var dbConfig = {
-  server: 'localhost',
-  database: 'TestDB',
-  user: 'SA',
-  password: 'EverymanAKing1.',
-  port: 1433
+  server: process.env.SERVER,
+  database: process.env.DATABASE,
+  user: process.env.USER,
+  password: process.env.PASSWORD,
+  port: process.env.PORT,
+  options: {
+    trustServerCertificate: true
+  }
 };
 
 const sql = require('mssql');
@@ -13,7 +16,6 @@ const express = require("express");
 const http = require("http");
 const socketIo = require("socket.io");
 const app = express();
-const port = 5000;
 app.use(express.static(path.join(__dirname, "public")))
   .set("views", path.join(__dirname, "views"))
   .engine("html", engine.mustache)
@@ -54,4 +56,4 @@ const getData = async (socket) => {
     console.error(`Error: ${error.code}`);
   }
 };
-server.listen(port, () => console.log(`Listening on port ${port}`));
+server.listen(process.env.PORT, () => console.log(`Listening on port ${port}`));
