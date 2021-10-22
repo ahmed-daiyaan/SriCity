@@ -1,14 +1,14 @@
 var dbConfig = {
-  server: process.env.SERVER,
-  database: process.env.DATABASE,
-  user: process.env.USER,
-  password: process.env.PASSWORD,
-  port: process.env.PORT,
-  options: {
-    trustServerCertificate: true
-  }
+  server: 'localhost',
+  database: 'TestDB',
+  user: 'SA',
+  password: 'EverymanAKing1.',
+  port: 1433
+  // options: {
+  //   trustServerCertificate: true
+  // }
 };
-
+const port = 5000;
 const sql = require('mssql');
 const engine = require("consolidate")
 const path = require("path")
@@ -56,4 +56,4 @@ const getData = async (socket) => {
     console.error(`Error: ${error.code}`);
   }
 };
-server.listen(process.env.PORT, () => console.log(`Listening on port ${port}`));
+server.listen(port, () => console.log(`Listening on port`));

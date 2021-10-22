@@ -29,17 +29,17 @@
   <body style="background-attachment: fixed" id="body">
     <div id="full-header">
       <div>
-        <div class="titlePosition">
+        <!-- <div class="titlePosition">
           <text class="text">
             <section class="title">Current Weather</section>
           </text>
-        </div>
+        </div> --> 
       </div>
       <div id="header"></div>
     </div>
     <div id="mySlideshow">
       <div>
-        <section style="padding-top: 14.89vw; padding-left: 25vw">
+        <section style="padding-top: 48vh; padding-left: 20vw">
           <section class="thermometer-wrapper" style="padding-top: 1.5vw">
             <section class="thermometer-rule">
               <span class="thermometer-rule-steps"></span>
@@ -57,68 +57,62 @@
         <section
           class="value"
           style="
-            font-size: 6vw;
-            font-family: Poppins;
-            font-weight: bold;
-            position: absolute;
-            top: 38%;
-            left: 58%;
-            text-align: center;
+            
+            top: 30%;
+            left: 50%;
+           
           "
         >
-          <section id="tempValue">35° C</section>
+         <section class="text">Temperature</section>
+          <section id="tempValue" style="padding-top:5vh">35° C</section>
 
-          <section class="text">Temperature</section>
+         
         </section>
       </div>
 
       <div>
-        <section style="padding-top: 14.89vw"></section>
+        <section style="padding-top: 48vh"></section>
 
-        <canvas style="width: 60%" id="humidity" class="gauge-container">
+        <canvas style="width: 50%; position:absolute; left:0;" id="humidity" class="gauge-container">
         </canvas>
         <section
           class="value"
           style="
-            font-size: 6vw;
-            font-family: Poppins;
-            font-weight: bold;
-            position: absolute;
-            top: 38%;
-            left: 62%;
-            text-align: center;
+            
+            top: 30%;
+            left: 54%;
+            
           "
         >
-          <section id="humidityValue">80%</section>
+        <section class="text">Humidity</section>
+          <section id="humidityValue" style="padding-top:5vh">80%</section>
 
-          <section class="text">Humidity</section>
+          
         </section>
       </div>
       <div>
-        <section style="padding-top: 14.89vw"></section>
+        <section style="padding-top: 48vh;"></section>
 
-        <canvas style="width: 60%" id="heatIndex" class="gauge-container">
+        <canvas style="width: 50%" id="heatIndex" class="gauge-container">
         </canvas>
         <section
           class="value"
           style="
-            font-size: 6vw;
-            font-family: Poppins;
-            font-weight: bold;
-            position: absolute;
-            top: 38%;
-            left: 62%;
-            text-align: center;
+            
+             top: 30%;
+            left: 50%;
+            
           "
         >
-          <section id="heatIndexValue">30° C</section>
+        <section class="text">Heat Index</section>
+          <section id="heatIndexValue" style="padding-top:5vh">30° C</section>
 
-          <section class="text">Heat Index</section>
+          
         </section>
       </div>
       <div>
-        <section style="padding-top: 14.89vw"></section>
-        <section style="padding-left: 29vw; padding-top: 15vw">
+        <section style="padding-top: 48vh;"></section>
+        <section style="padding-left: 25vw; padding-top: 15vw">
           <svg
             version="1.1"
             xmlns="http://www.w3.org/2000/svg"
@@ -162,28 +156,26 @@
         <section
           class="value"
           style="
-            font-size: 6vw;
-            font-family: Poppins;
-            font-weight: bold;
-            position: absolute;
-            top: 38%;
-            left: 63%;
-            text-align: center;
+           
+              top: 30%;
+            left: 50%;
+            
           "
         >
-          <section id="dewValue">20° C</section>
+        <section class="text">Dew Point</section>
+          <section id="dewValue" style="padding-top:5vh">20° C</section>
 
-          <section class="text">Dew Point</section>
+          
         </section>
       </div>
     </div>
 
     <div
       class="company-logo"
-      style="position: absolute; top: 0; right:0; padding: 2vh"
+      style="position: absolute; top: 0; left:0; padding:0vh;"
     > 
     <!-- TODO: Increase Sri city Size, Crop Integrated Business City -->
-    <img src="/img/logo_day.png" alt="Sri City Logo" height="130" id="logo"/>
+    <img src="/img/logo4.png" alt="Sri City Logo" id="logo"/>
     </div> 
     <!-- <p
       class="text"

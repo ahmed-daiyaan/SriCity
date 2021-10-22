@@ -296,3 +296,7 @@ main,
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
+
+#logo{
+  height:32vw;
+}

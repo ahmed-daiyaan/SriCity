@@ -25,7 +25,8 @@ function dayNightMode(
 ) {
   
   // currHour >= 12 && currMin >= 30 && currHour <= 0
-  if (currHour >= 1 && currHour <= 13) {
+  // currHour >= 1 && currHour <= 13
+  if (false) {
     tickColor = dayTickColor;
     bodyElm.style.background = dayBackgroundColor;
     ticker.style.background =  dayTextColor;
@@ -39,7 +40,7 @@ function dayNightMode(
       valueClass[i].style.color = dayTickColor;
     }
 
-    document.getElementById("logo").src = "/img/logo_day.png"
+    document.getElementById("logo").src = "/img/logo3.png"
     
 
   } else {
@@ -55,7 +56,7 @@ function dayNightMode(
     for (i = 0; i < valueClass.length; i++) {
       valueClass[i].style.color = "yellow";
     }
-    document.getElementById("logo").src = "/img/logo_night.png"
+    document.getElementById("logo").src = "/img/logo4.png"
 
   }
 }

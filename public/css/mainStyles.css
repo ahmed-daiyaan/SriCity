@@ -86,5 +86,14 @@ body {
   clear: both;
 }
 .text{
-  font-size: 5vw;
+  font-size: 7vw;
+}
+
+.value{
+  font-size: 18vw;
+            font-family: Poppins;
+            font-weight: bold;
+            position: absolute;
+            
+            text-align: center;
 }
