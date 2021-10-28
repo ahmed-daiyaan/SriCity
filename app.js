@@ -8,7 +8,7 @@ var dbConfig = {
   //   trustServerCertificate: true
   // }
 };
-const port = 5000;
+const port = 8001;
 const sql = require('mssql');
 const engine = require("consolidate")
 const path = require("path")
@@ -56,4 +56,4 @@ const getData = async (socket) => {
     console.error(`Error: ${error.code}`);
   }
 };
-server.listen(port, () => console.log(`Listening on port`));
+server.listen(port, () => console.log('Listening on port 8001'));

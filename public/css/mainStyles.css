@@ -20,28 +20,8 @@
   --night-tick-color: #fffaf0;
 }
 
-.title {
-  
-  color: var(--day-text-color);
-  font-size: 4vw;
-  padding: 0.5vw;
-  /* padding-left: 1vw; */
-  font-family: Poppins;
-}
-#ticker{
-  position: absolute; bottom:0;
-    font-family: Poppins;
-    font-weight: bold;
-    font-size: 4vh;
-    background-color: tic;
-    color: black;
-    left:0
-}
-.titlePosition{
-  text-align: center;
-}
 
-body {
+.body {
   background-attachment: fixed;
   background: var(--day-background-gradient);
 }
@@ -56,23 +36,7 @@ body {
   position: fixed;
 }
 
-/* Header*/
-#full-header {
-  align-content: center;
-}
-#header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  margin: 3vh;
-  position: relative;
-}
 
-#title {
-  position: absolute;
-  align-self: center;
-}
 .column {
   float: left;
   width: 50%;
@@ -87,13 +51,33 @@ body {
 }
 .text{
   font-size: 7vw;
+  font-family: Poppins;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 3vw;
+}
+.parameter-content-flex{
+  display:flex; flex-direction: column; justify-content: space-around; height:100%
+}
+.icon-value-flex{
+  display: flex;
+  flex-direction: row;
+  justify-content:space-evenly;
+  align-items: stretch;
 }
 
+
 .value{
-  font-size: 18vw;
-            font-family: Poppins;
-            font-weight: bold;
-            position: absolute;
+  font-size: 20vw;
+            font-family: 'TickingTimebombBB';
+            /* font-weight:700 ; */
+            /* position: absolute; */
             
-            text-align: center;
+            /* text-align: center; */
+}
+
+.small-value{
+  font-size: 6.5vw;
+  font-family: 'TickingTimebombBB';
+            /* font-weight: bold; */
 }
