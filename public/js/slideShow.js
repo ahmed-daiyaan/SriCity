@@ -1,5 +1,10 @@
 var cs = 0;
 var a = 20;
+function removeElement(id) {
+    var elem = document.getElementById(id);
+    return elem.parentNode.removeChild(elem);
+}
+
 //Plug-in constants
 const MXS_BOTTOM_POS = "bottom",
   MXS_TOP_POS = "top",
@@ -177,6 +182,7 @@ function chooseTransition() {
       }
       let images = [];
       let $imageDivs = $obj.find("div");
+
       //Retrive images and labels
       for (let i = 0; i < $imageDivs.length; i++) {
         $imageDivs.eq(i).addClass("mixSlide-image");
@@ -835,23 +841,25 @@ function chooseTransition() {
         currentImageIndex = nextImageIndex;
 
         cs = currentImageIndex;
+       
         switch (cs) {
+          
           case 1:
-            thermometer(60, temperature, true);
+            thermometer(60, 40, true);
             //TODO:Visualize with respect to average weather conditions annually
             // Color of track changes with calc in temperature. Blue, Red
             break;
           case 2:
-            humidityGauge(humidity);
-            break;
-          case 3:
-            heatIndexGauge(heatIndex);
+            airQualityIndexGauge(20);
             break;
           case 4:
-            dewpoint(dew);
+            humidityGauge(80);
             break;
           case 5:
-            airQualityIndexGauge(airQualityIndex);
+            heatIndexGauge(54);
+            break;
+          case 7:
+            dewpoint(30);
             break;
           default:
             break;

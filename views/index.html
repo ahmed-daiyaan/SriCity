@@ -43,7 +43,7 @@
   <div id="mySlideshow">
     <div class="body">
       <section >
-        <img id="logo" src="/img/logo_day.png" style="position: absolute; top:0; left: 0; height: 100%; width: 100%;"/>
+        <img id="logo" src="/logo/logo_night.png" style="position: absolute; top:0; left: 0; height: 100%; width: 100%;"/>
       </section>
     </div>
     <div class="body">
@@ -59,6 +59,33 @@
       <section id="tempValue" class="value">35° C</section>
       <!-- </section> -->
       <!-- </section> -->
+    </div>
+
+    <div class="body">
+      <!-- <section class="parameter-content-flex"> -->
+      <section class="text">Air Quality Index</section>
+      <!-- <section class="icon-value-flex"> -->
+      <section class="airQualityIndex-positioning">
+        <canvas style="width: 55%;" id="airQualityIndex" class="gauge-container">
+        </canvas>
+      </section>
+      <section id="airQualityIndexValue" class="value">80</section>
+      <section id="pm10">
+        PM 10
+        <section id="pm10Value" class="small-value">6</section>
+      </section>
+      <section id="pm25">
+        PM 2.5
+        <section id="pm25Value" class="small-value">6</section>
+      </section>
+      <!-- </section>
+      </section> -->
+    </div>
+
+    <div class="body">
+      <section >
+        <img id="image1" src="/img/1.png" onerror="this.onerror=null; this.src='/logo/logo_night.png'" style="position: absolute; top:0; left: 0; height: 100%; width: 100%;"/>
+      </section>
     </div>
 
     <div class="body">
@@ -83,6 +110,12 @@
         </canvas>
       </section>
       <section id="heatIndexValue" class="value">30° C</section>
+    </div>
+
+    <div class="body">
+      <section >
+        <img id="image2" src="/img/2.png" onerror="this.onerror=null; this.src='/logo/logo_night.png'" style="position: absolute; top:0; left: 0; height: 100%; width: 100%;"/>
+      </section>
     </div>
 
     <div class="body">
@@ -124,27 +157,13 @@
         <!-- </section> -->
       <!-- </section> -->
     </div>
-
     <div class="body">
-      <!-- <section class="parameter-content-flex"> -->
-      <section class="text">Air Quality Index</section>
-      <!-- <section class="icon-value-flex"> -->
-      <section class="airQualityIndex-positioning">
-        <canvas style="width: 55%;" id="airQualityIndex" class="gauge-container">
-        </canvas>
+      <section >
+        <img id="image3" src="/img/3.png" onerror="this.onerror=null; this.src='/logo/logo_night.png'" style="position: absolute; top:0; left: 0; height: 100%; width: 100%;"/>
       </section>
-      <section id="airQualityIndexValue" class="value">80</section>
-      <section id="pm10">
-        PM 10
-        <section id="pm10Value" class="small-value">6</section>
-      </section>
-      <section id="pm25">
-        PM 2.5
-        <section id="pm25Value" class="small-value">6</section>
-      </section>
-      <!-- </section>
-      </section> -->
     </div>
+
+    
   </div>
 
   <script src="/js/widgetCoordinator.js"></script>

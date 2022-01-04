@@ -1,10 +1,6 @@
 :root {
   /* Background Gradients for both day and night */
-  --day-background-gradient: linear-gradient(
-    to bottom,
-    #f18448 0%,
-    #ffd364 100%
-  );
+  --day-background-gradient: linear-gradient(to top, #30cfd0 0%, #330867 100%);;
   --night-background-gradient: linear-gradient(
     to bottom,
     #371a79 0%,

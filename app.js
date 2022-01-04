@@ -27,7 +27,7 @@ let interval;
 io.on("connection", (socket) => {
   console.log("New client connected");
   // getData(socket);
-
+  socket.emit("images", filePaths);
   socket.on("disconnect", () => console.log("Client disconnected"));
   global.db = sql.connect(dbConfig, function (err) {
     if (err) console.log(err);

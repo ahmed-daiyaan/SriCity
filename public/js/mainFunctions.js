@@ -15,7 +15,7 @@ $(function () {
   $("#mySlideshow").mixSlide({
     animation: {
       speed: 1,
-      delay: 10,
+      delay: 5,
     },
     transition: {
       name: "fade",
@@ -86,7 +86,7 @@ function humidityGauge(value) {
     pointer: {
       length: 0.5, // // Relative to gauge radius
       strokeWidth: 0.055, // The thickness
-      color: tickColor, // Fill color
+      color: "#000000", // Fill color
     },
     // staticLabels: {
     //   font: "6vh Poppins",  // Specifies font
@@ -131,7 +131,7 @@ function heatIndexGauge(value) {
     pointer: {
       length: 0.5, // // Relative to gauge radius
       strokeWidth: 0.055, // The thickness
-      color: tickColor, // Fill color
+      color:"#000000", // Fill color
     },
     limitMax: true, // If false, max value increases automatically if value > maxValue
     limitMin: true, // If true, the min value of the gauge will be fixed
@@ -141,11 +141,11 @@ function heatIndexGauge(value) {
     generateGradient: true,
     highDpiSupport: true, // High resolution support
     staticZones: [
-      { strokeStyle: "rgb(0,255,0)", min: 0, max: 26, height: 1.4 },
-      { strokeStyle: "#AAFF00", min: 27, max: 32, height: 1.4 },
-      { strokeStyle: "rgb(150,150,0)", min: 33, max: 39, height: 1.4 },
-      { strokeStyle: "rgb(255,0,0)", min: 40, max: 52, height: 1.4 },
-      { strokeStyle: "#8B0000", min: 53, max: 60, height: 1.4 },
+      { strokeStyle: "#1B8E3D", min: 0, max: 26, height: 1.4 },
+      { strokeStyle: "#1dad3f", min: 27, max: 32, height: 1.4 },
+      { strokeStyle: "#7aff5b", min: 33, max: 39, height: 1.4 },
+      { strokeStyle: "#ffca4b", min: 40, max: 52, height: 1.4 },
+      { strokeStyle: "#fff192", min: 53, max: 60, height: 1.4 },
     ],
   };
   var target = document.getElementById("heatIndex"); // your canvas element
